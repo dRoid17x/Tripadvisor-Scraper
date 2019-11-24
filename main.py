@@ -11,7 +11,6 @@ import sys
 import warnings
 import urlopen
 import random
-import cv2
 import base64
 import pickle
 
@@ -114,17 +113,12 @@ contactlist = getph[0]
 phone = contactlist.index('Contact') + 2
 hotel_json["address"]["phNumber"] = contactlist[phone]
 
-#img = soup.find_all(text=re.compile('https://media-cdn.tripadvisor.com/media/photo-'))
 
 response = html
 img = re.findall(r"https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)", str(response))
-
-
 imgs = [x for x in img
 		if x[1].endswith('.jpg')]
-	
 rand_imgs = random.sample(imgs, 7)
-print(len(rand_imgs))
 img_urls = []
 img_arrays = []
 for i in rand_imgs:
@@ -147,4 +141,3 @@ with open(hotel_json["name"]+".html", "wb") as file:
 with open(hotel_json["name"]+".json", 'w') as outfile:
     json.dump(hotel_json, outfile, indent=4)
 	
-	#https://media-cdn.tripadvisor.com/
