@@ -3,6 +3,7 @@ import urllib
 import urllib.request, urllib.parse, urllib.error
 from bs4 import BeautifulSoup
 from skimage import io
+import os
 import bs4
 import ssl
 import json
@@ -37,7 +38,6 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
-# url = input('Enter url - ' )
 url=input("Enter Tripadvisor Hotel Url- ")
 html = urllib.request.urlopen(url, context=ctx).read()
 soup = BeautifulSoup(html, 'html.parser')
@@ -51,9 +51,6 @@ for line in soup.find_all('script',attrs={"type" : "application/ld+json"}):
     hotel_json["name"] = details["name"]
     hotel_json["url"] = "https://www.tripadvisor.in"+details["url"]
     hotel_json["images"] = details["image"]
-    #details["priceRange"] = details["priceRange"].replace("₹ ","Rs ")
-    #details["priceRange"] = details["priceRange"].replace("₹","Rs ")
-    #hotel_json["priceRange"] = details["priceRange"]
     hotel_json["aggregateRating"]={}
     hotel_json["aggregateRating"]["ratingValue"]=details["aggregateRating"]["ratingValue"]
     hotel_json["aggregateRating"]["reviewCount"]=details["aggregateRating"]["reviewCount"]
@@ -65,7 +62,6 @@ for line in soup.find_all('script',attrs={"type" : "application/ld+json"}):
     hotel_json["address"]["Country"]=details["address"]["addressCountry"]["name"]
     break
 
-#rgx = re.compile('common-photo-carousel-PhotoCarousel__photo--11M-m common-photo-carousel-PhotoCarousel__crop')
 det = []
 amen = soup.find_all('div', attrs={'class' : 'ssr-init-26f'})
 for l in amen[0]:
@@ -122,22 +118,31 @@ rand_imgs = random.sample(imgs, 7)
 img_urls = []
 img_arrays = []
 for i in rand_imgs:
-	img_urls.append(i[1])
+    img_urls.append(i[1])
+new_urls = []
 for url in img_urls:
-	url = 'https://media-cdn.tripadvisor.com'+url
+	new_urls.append('https://media-cdn.tripadvisor.com' + url)
+
+hotel_json["image_urls"] = new_urls	
+
+'''
+for url in new_urls:
 	image = io.imread(url)
 	img_arrays.append(image)
 
 jstr = []
 for arr in img_arrays:
 	jstr.append(im2json(arr))
-	
+
 hotel_json["images"] = jstr
+'''
+pt = os.getcwd()
+if not os.path.exists('output'):
+    os.mkdir('output', mode= 0o777)
+    
 
-
-with open(hotel_json["name"]+".html", "wb") as file:
+with open("./output/"+hotel_json["name"]+".html", "wb") as file:
     file.write(html)
 
-with open(hotel_json["name"]+".json", 'w') as outfile:
+with open("./output/"+hotel_json["name"]+".json", 'w') as outfile:
     json.dump(hotel_json, outfile, indent=4)
-	
