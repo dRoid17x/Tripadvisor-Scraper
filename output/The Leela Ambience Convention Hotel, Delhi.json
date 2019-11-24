@@ -1,7 +1,6 @@
 {
     "name": "The Leela Ambience Convention Hotel, Delhi",
     "url": "https://www.tripadvisor.in/Hotel_Review-g304551-d3510307-Reviews-The_Leela_Ambience_Convention_Hotel_Delhi-New_Delhi_National_Capital_Territory_of_Delh.html",
-    "images": "https://media-cdn.tripadvisor.com/media/photo-s/13/96/a1/5c/the-leela-ambience-convention.jpg",
     "aggregateRating": {
         "ratingValue": "5.0",
         "reviewCount": "3621"
@@ -73,29 +72,31 @@
             "Shoeshine"
         ],
         "roomFeatures": [
+            "Blackout curtains",
+            "Soundproof rooms",
+            "Air conditioning",
+            "Housekeeping",
+            "Room service",
+            "Safe",
+            "Minibar",
+            "Flatscreen TV",
+            "VIP room facilities",
+            "Refrigerator",
+            "Show more",
+            "Room types",
             "Non-smoking rooms",
             "Suites",
             "Family rooms",
-            "Blackout curtains",
-            "Air conditioning",
-            "Housekeeping",
-            "Minibar",
-            "Flatscreen TV",
-            "Smoking rooms available",
-            "Soundproof rooms",
-            "Room service",
-            "Safe",
-            "VIP room facilities",
-            "Refrigerator"
+            "Smoking rooms available"
         ]
     },
     "image_urls": [
-        "https://media-cdn.tripadvisor.com/media/oyster/1180/0b/67/96/de/cherry-bar--v12279287.jpg",
-        "https://media-cdn.tripadvisor.com/media/photo-o/0f/46/23/41/the-leela-ambience-convention.jpg",
-        "https://media-cdn.tripadvisor.com/media/photo-w/09/fa/84/88/the-leela-ambience-convention.jpg",
-        "https://media-cdn.tripadvisor.com/media/oyster/1180/0b/67/95/72/deluxe-suite--v12279292.jpg",
-        "https://media-cdn.tripadvisor.com/media/photo-f/11/10/ab/9b/the-leela-ambience-convention.jpg",
-        "https://media-cdn.tripadvisor.com/media/oyster/800/0b/67/94/df/fitness-center--v12279236.jpg",
-        "https://media-cdn.tripadvisor.com/media/photo-w/0f/46/23/41/the-leela-ambience-convention.jpg"
+        "https://media-cdn.tripadvisor.com/media/photo-t/0b/67/97/9e/tower-b-lobby--v12279172.jpg",
+        "https://media-cdn.tripadvisor.com/media/photo-f/0f/ff/fd/8a/the-leela-ambience-convention.jpg",
+        "https://media-cdn.tripadvisor.com/media/oyster/1850/0b/67/97/99/tower-a-lobby--v12279169.jpg",
+        "https://media-cdn.tripadvisor.com/media/photo-t/0f/ff/fd/fd/the-leela-ambience-convention.jpg",
+        "https://media-cdn.tripadvisor.com/media/oyster/2450/0b/67/94/df/fitness-center--v12279236.jpg",
+        "https://media-cdn.tripadvisor.com/media/photo-t/0b/67/97/99/tower-a-lobby--v12279169.jpg",
+        "https://media-cdn.tripadvisor.com/media/photo-f/18/ec/76/77/flaming-beverages-at.jpg"
     ]
 }
