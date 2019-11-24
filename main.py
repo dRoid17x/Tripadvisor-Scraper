@@ -50,7 +50,6 @@ for line in soup.find_all('script',attrs={"type" : "application/ld+json"}):
     details = json.loads(details)
     hotel_json["name"] = details["name"]
     hotel_json["url"] = "https://www.tripadvisor.in"+details["url"]
-    hotel_json["images"] = details["image"]
     hotel_json["aggregateRating"]={}
     hotel_json["aggregateRating"]["ratingValue"]=details["aggregateRating"]["ratingValue"]
     hotel_json["aggregateRating"]["reviewCount"]=details["aggregateRating"]["reviewCount"]
